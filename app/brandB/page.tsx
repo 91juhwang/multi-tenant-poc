@@ -14,7 +14,7 @@ export default async function brandA() {
         <h1>Collections</h1>
         <article>
           {collections.map((collection:any) => (
-            <Link href={'/brandB/' + collection.id} key={collection.id} >
+            <Link href={'/brandB/' + collection.content} key={collection.id} >
               <h3 className="border-2 mt-4 text-[#e11d48]">{'go to ' + collection.content}</h3>
             </Link>
           ))}

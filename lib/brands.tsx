@@ -41,9 +41,9 @@ export async function getAllBrandBCollections() {
   return BRANDB_LIST
 }
 
-export async function getSingleBrandBCollection(id:string) {
+export async function getSingleBrandBCollection(content:string) {
 
-  const collection = BRANDB_LIST.find((collection) => collection.id === id)
+  const collection = BRANDB_LIST.find((collection) => collection.content === content)
   return collection 
 }
 
