@@ -9,7 +9,7 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function Page({ params }: { params: { cartId: string } }) {
+export default async function CartPage({ params }: { params: { cartId: string } }) {
   const cart:any = await getSingleBrandBCart(params.cartId);
 
   return (

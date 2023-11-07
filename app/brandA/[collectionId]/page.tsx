@@ -9,7 +9,7 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function Page({ params }: { params: { collectionId: string } }) {
+export default async function ProductPage({ params }: { params: { collectionId: string } }) {
   const collection:any = await getSingleBrandCollection(params.collectionId);
 
   return (

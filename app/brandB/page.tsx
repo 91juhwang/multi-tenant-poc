@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { getAllBrandBCarts } from '../../lib/brands';
 
-export default async function brandBPage() {
+export default async function BrandBPage() {
   const carts:any = await getAllBrandBCarts();
 
   return (
