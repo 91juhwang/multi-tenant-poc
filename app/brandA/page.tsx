@@ -6,17 +6,22 @@ export default async function brandA() {
 
   return (
     <main>
-      <h1>Brand AAAA</h1>
-      <h2>
-        <Link href="/" className="text-[#e11d48]">back to home</Link>
-      </h2>
+      <h1 className="font-mono font-bold p-5">Brand A</h1>
       <section>
-        <h1>Collections</h1>
+        <h1 className="font-mono p-5">Collections:</h1>
+        <h2>
+          <Link href="/" className="text-[#e11d48]">back to home</Link>
+        </h2>
         <article>
-          {collections.map((collection:any) => (
-            <Link href={'/brandA/' + collection.id} key={collection.id} >
-              <h3 className="border-2 mt-4 text-[#e11d48]">{'go to ' + collection.content}</h3>
-            </Link>
+          {collections.products.map((collection:any) => (
+            <article className="border-2 mt-4">
+              <h3>{'Title: ' + collection.title}</h3>
+              <h3>{'Description: ' + collection.description}</h3>
+              <h3>{'Price: ' + collection.price}</h3>
+              <Link href={'/brandA/' + collection.id} key={collection.id} >
+                <h3 className="text-[#e11d48]">{'go to ' + collection.brand}</h3>
+              </Link>
+            </article>
           ))}
         </article>
       </section>

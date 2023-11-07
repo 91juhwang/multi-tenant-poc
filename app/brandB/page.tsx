@@ -1,24 +1,30 @@
 import Link from 'next/link';
-import { getAllBrandBCollections } from '../../lib/brands';
+import { getAllBrandBCarts } from '../../lib/brands';
 
-export default async function brandA() {
-  const collections:any = await getAllBrandBCollections();
+export default async function brandBPage() {
+  const carts:any = await getAllBrandBCarts();
 
   return (
     <main>
-      <h1>Brand BBBBBB</h1>
-      <h2>
-        <Link href="/" className="text-[#e11d48]">back to home</Link>
-      </h2>
+      <h1 className="font-mono font-bold p-5">Brand B</h1>
+      <h1 className="font-mono p-5">Carts:</h1>
       <section>
-        <h1>Collections</h1>
-        <article>
-          {collections.map((collection:any) => (
-            <Link href={'/brandB/' + collection.content} key={collection.id} >
-              <h3 className="border-2 mt-4 text-[#e11d48]">{'go to ' + collection.content}</h3>
-            </Link>
+        <h1>Carts:</h1>
+        <h2>
+          <Link href="/" className="text-[#e11d48]">back to home</Link>
+        </h2>
+        <section>
+          {carts.carts.map((cart:any) => (
+            <article className="border-2 mt-4">
+              <h3>{'Total: ' + cart.total}</h3>
+              <h3>{'User Id: ' + cart.userId}</h3>
+              <h3>{'Quantity: ' + cart.totalQuantity}</h3>
+              <Link href={'/brandB/' + cart.id} key={cart.id} >
+                <h3 className="mt-1 text-[#e11d48]">{'go to Cart'}</h3>
+              </Link>
+            </article>
           ))}
-        </article>
+        </section>
       </section>
     </main>
   );
