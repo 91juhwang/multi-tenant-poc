@@ -10,9 +10,7 @@ export async function generateStaticParams() {
 }
 
 export default async function Page({ params }: { params: { cartId: string } }) {
-  console.log(params)
   const cart:any = await getSingleBrandBCart(params.cartId);
-  console.log(cart)
 
   return (
     <article>

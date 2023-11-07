@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { getAllBrandCollections } from '../../lib/brands';
 
-export default async function brandA() {
+export default async function BrandA() {
   const collections:any = await getAllBrandCollections();
 
   return (

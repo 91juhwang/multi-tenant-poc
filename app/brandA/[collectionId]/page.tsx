@@ -10,7 +10,6 @@ export async function generateStaticParams() {
 }
 
 export default async function Page({ params }: { params: { collectionId: string } }) {
-  console.log(params.collectionId)
   const collection:any = await getSingleBrandCollection(params.collectionId);
 
   return (
