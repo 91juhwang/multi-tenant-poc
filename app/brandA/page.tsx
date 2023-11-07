@@ -14,11 +14,11 @@ export default async function BrandA() {
         </h2>
         <article>
           {collections.products.map((collection:any) => (
-            <article className="border-2 mt-4">
+            <article className="border-2 mt-4" key={collection.id}>
               <h3>{'Title: ' + collection.title}</h3>
               <h3>{'Description: ' + collection.description}</h3>
               <h3>{'Price: ' + collection.price}</h3>
-              <Link href={'/brandA/' + collection.id} key={collection.id} >
+              <Link href={'/brandA/' + collection.id}>
                 <h3 className="text-[#e11d48]">{'go to ' + collection.brand}</h3>
               </Link>
             </article>

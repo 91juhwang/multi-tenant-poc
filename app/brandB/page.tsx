@@ -15,7 +15,7 @@ export default async function brandBPage() {
         </h2>
         <section>
           {carts.carts.map((cart:any) => (
-            <article className="border-2 mt-4">
+            <article className="border-2 mt-4" key={cart.id}>
               <h3>{'Total: ' + cart.total}</h3>
               <h3>{'User Id: ' + cart.userId}</h3>
               <h3>{'Quantity: ' + cart.totalQuantity}</h3>
