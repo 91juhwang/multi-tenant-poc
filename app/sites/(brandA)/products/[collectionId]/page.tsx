@@ -22,7 +22,7 @@ export default async function ProductPage({ params }: { params: { collectionId: 
       <h3>{'Price: ' + collection.price}</h3>
     </article>
       <Link href={'/'}>
-        <h3 className="border-2 mt-4 text-[#e11d48]">Back to BrandA</h3>
+        <h3 className="border-2 mt-4 text-[#e11d48]">Back to products page</h3>
       </Link>
     </section>
   );

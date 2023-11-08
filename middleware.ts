@@ -5,8 +5,6 @@ export const config = {
   matcher: [
     '/',
     '/sites/:path*',
-    // '/brandA/:path*',
-    // '/brandB/:path*',
     '/products/:path*',
     '/carts/:path*',
   ],
@@ -24,16 +22,12 @@ export default async function middleware(req: NextRequest) {
   }
 
   const pathWOPartner = url.pathname.split('/').splice(2).join('/')
-  console.log(pathWOPartner)
 
   if (url.pathname.startsWith(`/sites`)) {
     url.pathname = `/404`
   } else {
     url.pathname = `/sites${PARTNER_PATH_MAP[hostName]}/${pathWOPartner}`
-    console.log(url.pathname)
   }
-
-  console.log(url)
 
   // return NextResponse.rewrite(url)
   return NextResponse.rewrite(url)

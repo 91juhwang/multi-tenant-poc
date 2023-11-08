@@ -18,7 +18,7 @@ export default async function CartPage({ params }: { params: { cartId: string } 
       <h3>{'User Id: ' + cart.userId}</h3>
       <h3>{'Quantity: ' + cart.totalQuantity}</h3>
       <Link href={'/'}>
-         <h3 className="border-2 mt-4 text-[#e11d48]">Back to Brand B Carts</h3>
+         <h3 className="border-2 mt-4 text-[#e11d48]">Back to Carts Page</h3>
       </Link>
     </article>
   );
