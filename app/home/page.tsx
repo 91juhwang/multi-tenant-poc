@@ -11,7 +11,7 @@ export default function Home() {
       </div>
       <section className="flex flex-col justify-center pt-12">
         <Link href="/" className="text-[#e11d48]">Brand A page</Link>
-        <Link href="https://test-app-olive-pi.vercel.app/" className="text-[#e11d48]">brand B page</Link>
+        <Link href="https://test-app-james-hwangs-projects.vercel.app/" className="text-[#e11d48]">brand B page</Link>
       </section>
     </main>
   )

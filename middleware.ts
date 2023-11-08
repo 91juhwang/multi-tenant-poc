@@ -12,8 +12,8 @@ export default async function middleware(req: NextRequest) {
   // domain to pathname map for each tenant
   const CLIENT_PATHNAME_MAP:any = {
     'localhost:3000': '/brandA',
-    'test-app-olive-pi.vercel.app': '/brandB',
-    'test-app-james-hwangs-projects.vercel.app':'/brandA'
+    'test-app-olive-pi.vercel.app': '/brandA',
+    'test-app-james-hwangs-projects.vercel.app':'/brandB'
   }
 
   console.log(url.pathname)

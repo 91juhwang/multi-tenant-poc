@@ -6,7 +6,7 @@ export default async function BrandBPage() {
 
   return (
     <main>
-      <h1 className="font-mono font-bold p-5">Brand B</h1>
+      <h1 className="font-mono font-bold p-5">Tenant 2</h1>
       <h1 className="font-mono p-5">Carts:</h1>
       <section>
         <h1>Carts:</h1>
