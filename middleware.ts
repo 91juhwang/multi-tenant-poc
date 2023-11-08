@@ -1,18 +1,29 @@
-import { NextResponse } from 'next/server'
-import type { NextRequest } from 'next/server'
- 
-// This function can be marked `async` if using `await` inside
-export function middleware(request: NextRequest) {
-  return NextResponse.redirect(new URL('/home', request.url))
-}
+import { NextRequest, NextResponse } from 'next/server'
 
-
-const tenants = {
-    // domain: page to render (in layout)
-    'domain': '/brandA',
-}
- 
-// See "Matching Paths" below to learn more
+// matches to run middleware
 export const config = {
-  matcher: '/brandB/:path*',
+  matcher: ['/', '/sites/:path*'],
 }
+
+export default async function middleware(req: NextRequest) {
+  const url = req.nextUrl
+  const hostName = req.headers.get('host') || ''
+
+  // domain to pathname map for each tenant
+  const CLIENT_PATHNAME_MAP:any = {
+    'localhost:3000': '/brandA',
+    'test-app-olive-pi.vercel.app/': '/brandB',
+    '':''
+  }
+
+  console.log(url.pathname)
+  if (url.pathname.startsWith(`/sites`)) {
+    url.pathname = `/404`
+  } else {
+      url.pathname = `/sites${CLIENT_PATHNAME_MAP[hostName]}`
+  }
+
+  return NextResponse.rewrite(url)
+}
+
+

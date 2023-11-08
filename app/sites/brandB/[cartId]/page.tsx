@@ -1,4 +1,4 @@
-import { getSingleBrandBCart, getAllBrandBCarts } from '../../../lib/brands';
+import { getSingleBrandBCart, getAllBrandBCarts } from '../../../../lib/brands';
 import Link from 'next/link';
 
 export async function generateStaticParams() {

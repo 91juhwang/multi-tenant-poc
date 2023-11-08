@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { getAllBrandBCarts } from '../../lib/brands';
+import { getAllBrandBCarts } from '../../../lib/brands';
 
 export default async function BrandBPage() {
   const carts:any = await getAllBrandBCarts();
@@ -11,7 +11,7 @@ export default async function BrandBPage() {
       <section>
         <h1>Carts:</h1>
         <h2>
-          <Link href="/" className="text-[#e11d48]">back to home</Link>
+          <Link href="/home" className="text-[#e11d48]">back to home</Link>
         </h2>
         <section>
           {carts.carts.map((cart:any) => (

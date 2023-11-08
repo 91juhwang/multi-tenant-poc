@@ -1,4 +1,4 @@
-import { getSingleBrandCollection, getAllBrandCollections } from '../../../lib/brands';
+import { getSingleBrandCollection, getAllBrandCollections } from '../../../../lib/brands';
 import Link from 'next/link';
 
 export async function generateStaticParams() {
