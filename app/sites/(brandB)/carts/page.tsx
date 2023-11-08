@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { getAllBrandBCarts } from '../../../lib/brands';
+import { getAllBrandBCarts } from '../../../../lib/brands';
 
 export default async function BrandBPage() {
   const carts:any = await getAllBrandBCarts();
@@ -19,7 +19,7 @@ export default async function BrandBPage() {
               <h3>{'Total: ' + cart.total}</h3>
               <h3>{'User Id: ' + cart.userId}</h3>
               <h3>{'Quantity: ' + cart.totalQuantity}</h3>
-              <Link href={'/brandB/' + cart.id} key={cart.id} >
+              <Link href={'/carts/' + cart.id} key={cart.id} >
                 <h3 className="mt-1 text-[#e11d48]">{'go to Cart'}</h3>
               </Link>
             </article>

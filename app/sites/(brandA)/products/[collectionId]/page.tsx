@@ -1,4 +1,4 @@
-import { getSingleBrandCollection, getAllBrandCollections } from '../../../../lib/brands';
+import { getSingleBrandCollection, getAllBrandCollections } from '../../../../../lib/brands';
 import Link from 'next/link';
 
 export async function generateStaticParams() {
@@ -21,7 +21,7 @@ export default async function ProductPage({ params }: { params: { collectionId: 
       <h3>{'Category: ' + collection.category}</h3>
       <h3>{'Price: ' + collection.price}</h3>
     </article>
-      <Link href={'/brandA'}>
+      <Link href={'/'}>
         <h3 className="border-2 mt-4 text-[#e11d48]">Back to BrandA</h3>
       </Link>
     </section>

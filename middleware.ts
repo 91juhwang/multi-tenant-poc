@@ -5,8 +5,10 @@ export const config = {
   matcher: [
     '/',
     '/sites/:path*',
-    '/brandA/:path*',
-    '/brandB/:path*'
+    // '/brandA/:path*',
+    // '/brandB/:path*',
+    '/products/:path*',
+    '/carts/:path*',
   ],
 }
 
@@ -16,21 +18,24 @@ export default async function middleware(req: NextRequest) {
 
   // domain to pathname map for each tenant
   const PARTNER_PATH_MAP:any = {
-    'localhost:3000': '/brandA',
-    'test-app-olive-pi.vercel.app': '/brandA',
-    'test-app-james-hwangs-projects.vercel.app':'/brandB'
+    'localhost:3000': '/products',
+    'test-app-olive-pi.vercel.app': '/products',
+    'test-app-james-hwangs-projects.vercel.app':'/carts'
   }
 
   const pathWOPartner = url.pathname.split('/').splice(2).join('/')
+  console.log(pathWOPartner)
 
   if (url.pathname.startsWith(`/sites`)) {
     url.pathname = `/404`
   } else {
     url.pathname = `/sites${PARTNER_PATH_MAP[hostName]}/${pathWOPartner}`
+    console.log(url.pathname)
   }
 
   console.log(url)
 
+  // return NextResponse.rewrite(url)
   return NextResponse.rewrite(url)
 }
 

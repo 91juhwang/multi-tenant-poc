@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { getAllBrandCollections } from '../../../lib/brands';
+import { getAllBrandCollections } from '../../../../lib/brands';
 
 export default async function BrandAPage() {
   const collections:any = await getAllBrandCollections();
@@ -18,7 +18,7 @@ export default async function BrandAPage() {
               <h3>{'Title: ' + collection.title}</h3>
               <h3>{'Description: ' + collection.description}</h3>
               <h3>{'Price: ' + collection.price}</h3>
-              <Link href={'/brandA/' + collection.id}>
+              <Link href={'/products/' + collection.id}>
                 <h3 className="text-[#e11d48]">{'go to ' + collection.brand}</h3>
               </Link>
             </article>
